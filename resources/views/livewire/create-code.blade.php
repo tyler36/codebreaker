@@ -1,5 +1,8 @@
-<div class="flex justify-center px-3 py-2 mt-8 rounded">
-    <form action="">
+<div class="flex flex-col items-center mt-8">
+    <form
+        action=""
+        class="rounded"
+    >
         <textarea
             name=""
             id=""
@@ -10,7 +13,14 @@
         ></textarea>
     </form>
 
-    <p>
-        {{ $message }}
-    </p>
+    <div class="flex justify-center mt-8 gap-7">
+        @foreach (explode(' ', $message) as $word)
+            <div class="word">
+                @foreach (str_split($word) as $character)
+                    <span
+                        class="material-symbols-outlined character">{{ $this->letters[strtolower($character)] ?? $character }}</span>
+                @endforeach
+            </div>
+        @endforeach
+    </div>
 </div>
