@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center mt-8">
+<div class="flex flex-col items-center gap-10 my-8">
     <form
         action=""
         class="rounded"
@@ -13,14 +13,6 @@
         ></textarea>
     </form>
 
-    <div class="flex justify-center mt-8 gap-7">
-        @foreach (explode(' ', $message) as $word)
-            <div class="word">
-                @foreach (str_split($word) as $character)
-                    <span
-                        class="material-symbols-outlined character">{{ $this->letters[strtolower($character)] ?? $character }}</span>
-                @endforeach
-            </div>
-        @endforeach
-    </div>
+    <x-code :message="$message" :letters="$this->letters"></x-code>
+    <x-legend :letters="$this->letters"></x-legend>
 </div>
