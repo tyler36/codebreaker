@@ -1,11 +1,9 @@
 <x-layout>
-    <section class="px-6">
+    <section class="container flex flex-col h-full px-6 mx-auto print:justify-start">
 
-        <div class="container mx-auto">
-            <header class="flex justify-center">
-                <h1>Codebreaker</h1>
-            </header>
-        </div>
+        <header class="flex justify-center">
+            <h1>Codebreaker</h1>
+        </header>
 
         <livewire:create-code />
     </section>
